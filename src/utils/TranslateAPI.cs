@@ -381,18 +381,33 @@ namespace LiveCaptionsTranslator.utils
 
             if (response.IsSuccessStatusCode)
             {
+                // {
+                //     "code": 200,
+                //     "id": ,
+                //     "data": "",
+                //     "alternatives": []
+                // }
                 string responseString = await response.Content.ReadAsStringAsync();
                 using var doc = JsonDocument.Parse(responseString);
 
-                if (doc.RootElement.TryGetProperty("translations", out var translations) &&
-                    translations.ValueKind == JsonValueKind.Array && translations.GetArrayLength() > 0)
+                if (doc.RootElement.TryGetProperty("code", out var codeElem)
+                    && codeElem.ValueKind == JsonValueKind.Number
+                    && codeElem.GetInt32() == 200
+                    && doc.RootElement.TryGetProperty("data", out var dataElem)
+                    && dataElem.ValueKind == JsonValueKind.String)
                 {
-                    return translations[0].GetProperty("text").GetString();
+                    return dataElem.GetString();
                 }
-                return "[Translation Failed] No valid feedback";
+                else
+                {
+                    // If the format is not as expected, type out the original return to troubleshoot it.
+                    return $"[Translation Failed] Unexpected response: {responseString}";
+                }
             }
             else
+            {
                 return $"[Translation Failed] HTTP Error - {response.StatusCode}";
+            }
         }
 
         public static async Task<string> Youdao(string text, CancellationToken token = default)
