@@ -209,7 +209,7 @@ namespace LiveCaptionsTranslator.models
             { "fr-FR", "FR" },
         };
 
-        private string apiUrl = "https://api.deeplx.org/rY-ObM-GY2ICdx0Ot_qOayEV8ej87-W08IeYHjqQKPI/translate";
+        private string apiUrl = "https://api.deeplx.org/<api-key>/translate";
 
         public string ApiUrl
         {
