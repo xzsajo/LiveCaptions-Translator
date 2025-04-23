@@ -21,6 +21,7 @@ namespace LiveCaptionsTranslator
             OpenAIButton.Background = new SolidColorBrush(Colors.Transparent);
             OpenRouterButton.Background = new SolidColorBrush(Colors.Transparent);
             DeepLButton.Background = new SolidColorBrush(Colors.Transparent);
+            DeepLXButton.Background = new SolidColorBrush(Colors.Transparent);
             YoudaoButton.Background = new SolidColorBrush(Colors.Transparent);
             MTranServerButton.Background = new SolidColorBrush(Colors.Transparent);
             BaiduButton.Background = new SolidColorBrush(Colors.Transparent);
@@ -45,6 +46,7 @@ namespace LiveCaptionsTranslator
                 { "OpenAI", OpenAISection },
                 { "OpenRouter", OpenRouterSection },
                 { "DeepL", DeepLSection },
+                { "DeepLX", DeepLXSection },
                 { "Youdao", YoudaoSection },
                 { "MTranServer", MTranServerSection },
                 { "Baidu", BaiduSection },

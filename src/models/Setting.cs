@@ -142,6 +142,7 @@ namespace LiveCaptionsTranslator.models
                 { "Ollama", new OllamaConfig() },
                 { "OpenAI", new OpenAIConfig() },
                 { "DeepL", new DeepLConfig() },
+                { "DeepLX", new DeepLXConfig() },
                 { "OpenRouter", new OpenRouterConfig() },
                 { "MTranServer", new MTranServerConfig() },
             };

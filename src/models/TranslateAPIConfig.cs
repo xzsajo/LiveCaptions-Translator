@@ -195,6 +195,32 @@ namespace LiveCaptionsTranslator.models
             }
         }
     }
+    public class DeepLXConfig : TranslateAPIConfig
+    {
+        [JsonIgnore]
+        public override Dictionary<string, string> SupportedLanguages { get; } = new()
+        {
+            { "zh-CN", "ZH-HANS" },
+            { "zh-TW", "ZH-HANT" },
+            { "en-US", "EN-US" },
+            { "en-GB", "EN-GB" },
+            { "ja-JP", "JA" },
+            { "ko-KR", "KO" },
+            { "fr-FR", "FR" },
+        };
+
+        private string apiUrl = "https://api.deeplx.org/rY-ObM-GY2ICdx0Ot_qOayEV8ej87-W08IeYHjqQKPI/translate";
+
+        public string ApiUrl
+        {
+            get => apiUrl;
+            set
+            {
+                apiUrl = value;
+                OnPropertyChanged("ApiUrl");
+            }
+        }
+    }
     public class YoudaoConfig : TranslateAPIConfig
     {
         public class TranslationResult
