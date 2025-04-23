@@ -487,6 +487,12 @@
                                             FontSize="13.3"
                                             Text="{Binding Configs[DeepLX].ApiUrl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                     </StackPanel>
+                                    <StackPanel
+                                        Grid.Row="1"
+                                        Margin="15,10,0,0"
+                                        Orientation="Vertical">
+                                        <ui:TextBlock Margin="2.5,0,0,5" Text="Hello DeeplX. Usage: https://linux.do/t/topic/111737" />
+                                    </StackPanel>
                                 </Grid>
                             </ui:Card>
                         </StackPanel>
