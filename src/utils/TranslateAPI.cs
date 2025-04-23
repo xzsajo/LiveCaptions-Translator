@@ -354,7 +354,7 @@ namespace LiveCaptionsTranslator.utils
 
             var requestData = new
             {
-                text = new[] { text },
+                text = text,
                 target_lang = language
             };
 
